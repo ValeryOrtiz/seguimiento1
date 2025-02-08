@@ -55,11 +55,15 @@ public class Docente {
     }
 
     public void asignarNota(Estudiante estudiante,int sello, double nota){
-        System.out.println("...............................");
-        asignarNota(estudiante,nota);
-        String selloAsigando = asignarSello(sello);
-        System.out.println("Sello: " + selloAsigando);
-        System.out.println("...............................");
+        if(sello>=0 && sello<=5) {
+            System.out.println("...............................");
+            asignarNota(estudiante, nota);
+            String selloAsigando = asignarSello(sello);
+            System.out.println("Sello: " + selloAsigando);
+            System.out.println("...............................");
+        }else {
+            System.out.println("El sello no existe");
+        }
     }
 
     private double convertirNota(String nota) {
